@@ -6,97 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Image Gallery</title>
   
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <script>
     tailwind.config = {
       darkMode: 'class'
     };
   </script>
+
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="./styles.css" />
+
 </head>
 
 <body class="transition-colors duration-500">
 
-  <button id="darkToggle"
-    class="absolute top-4 right-4 p-2 rounded bg-white text-black dark:bg-gray-700 dark:text-white shadow-md">
-    Toggle Dark Mode
-  </button>
+  <header class="p-6 bg-indigo-500 text-white dark:bg-indigo-700 flex flex-col sm:flex-row justify-between items-center fancy-header">
+  
+  <div class="w-full flex justify-between items-center">
+    <!-- Dark Mode Button on the left -->
+    <button id="darkToggle"
+      class="p-2 rounded bg-white text-black dark:bg-gray-700 dark:text-white shadow-md">
+      🌑 Dark Mode
+    </button>
 
-  <header
-    class="p-6 bg-blue-600 dark:bg-gray-800 text-white text-2xl font-bold text-center">
-    Image Gallery
-  </header>
+    <!-- Title centered on small screens, right-aligned on larger -->
+    <h1 class="text-2xl sm:text-3xl font-bold text-center sm:text-right flex-1">
+      Image Gallery
+    </h1>
+  </div>
+
+</header>
+
+
+
+
+
+
 
   <main class="bg-white text-black dark:bg-gray-900 dark:text-white min-h-screen">
     <div class="container mx-auto p-6">
-
       <div id="gallery"
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       </div>
-
     </div>
   </main>
 
   <footer
-    class="p-4 bg-gray-100 dark:bg-gray-900 text-center text-sm text-gray-600 dark:text-gray-300">
+    class="p-4 bg-gray-200 dark:bg-gray-700 text-center text-sm text-gray-600 dark:text-gray-300">
     &copy; 2025 Ellene R Broome. All rights reserved
   </footer>
 
-  <script>
-    const gallery = document.getElementById("gallery");
-
-    // Fetch 12 random images from Lorem Picsum
-    async function fetchImages() {
-      try {
-        const res = await fetch(
-          "https://picsum.photos/v2/list?page=2&limit=12"
-        );
-        const data = await res.json();
-
-        gallery.innerHTML = data
-          .map((image) => {
-            return `
-              <div class="relative group rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                <img 
-                  class="w-full h-60 object-cover" 
-                  src="${image.download_url}" 
-                  alt="Photo by ${image.author} from Lorem Picsum"
-                />
-                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-sm p-2 opacity-0 group-hover:opacity-100 transition">
-                  ${image.author}
-                </div>
-              </div>
-            `;
-          })
-          .join("");
-      } catch (error) {
-        console.error("Failed to fetch images:", error);
-      }
-    }
-
-    fetchImages();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.getElementById('darkToggle');
-      const html = document.documentElement;
-
-      // Load saved theme from localStorage
-      if (localStorage.getItem('theme') === 'dark') {
-        html.classList.add('dark');
-      } else {
-        html.classList.remove('dark');
-      }
-
-      // Toggle dark mode on button click and save preference
-      toggle.addEventListener('click', () => {
-        html.classList.toggle('dark');
-        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-      });
-    });
-  </script>
-
+  <!-- Link external JS -->
+  <script src="script.js"></script>
 </body>
 
 </html>

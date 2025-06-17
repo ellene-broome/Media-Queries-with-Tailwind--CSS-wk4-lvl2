@@ -1,0 +1,19 @@
+
+
+
+.fancy-header {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  animation: colorShift 4s infinite alternate;
+}
+
+@keyframes colorShift {
+  0% {
+    color: #890a56;
+  }
+  100% {
+    color: #7873f5;
+  }
+}
+
+

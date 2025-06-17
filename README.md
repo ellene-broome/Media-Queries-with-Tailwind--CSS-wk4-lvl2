@@ -1,6 +1,5 @@
 # Media-Queries-with-Tailwind--CSS-wk4-lvl2
 
-Base Requirements 
 Layout the Gallery
 
 Style #gallery as a responsive grid using Tailwind:
@@ -22,8 +21,6 @@ Add Hover Effects
 
 Add an interactive hover state:
 
-Example: hover:scale-105 transition duration-300 ease-in-out
-
 Use group and group-hover if you want to reveal info or overlays
 
 Stretch Goals (Optional)
@@ -35,15 +32,3 @@ Use Tailwind’s dark: class to experiment with dark mode
 
 Animate cards on load using a custom class or animate-fade-in (if defined)
 
-Submission Instructions
-Style your project locally
-
-Push it to a GitHub repository
-
-Deploy it using GitHub Pages
-
-Submit both:
-
-GitHub Repo URL (e.g., https://github.com/yourname/image-gallery)
-
-GitHub Pages URL (e.g., https://yourname.github.io/image-gallery)
